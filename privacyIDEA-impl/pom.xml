@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -9,17 +9,17 @@
     </parent>
 
     <artifactId>idp-plugin-privacyIDEA-impl</artifactId>
-    <packaging>jar</packaging>    
+    <packaging>jar</packaging>
     <name>Shibboleth IdP :: Plugins :: privacyIDEA Impl</name>
     <description>IdP privacyIDEA plugin implementation.</description>
-    
+
     <properties>
         <checkstyle.configLocation>${project.basedir}/../checkstyle.xml</checkstyle.configLocation>
         <automatic.module.name>org.privacyidea.privacyIDEA.impl</automatic.module.name>
     </properties>
-    
+
     <dependencies>
-         <!-- compile time intra project dependencies -->
+        <!-- compile time intra project dependencies -->
         <dependency>
             <groupId>org.privacyidea</groupId>
             <artifactId>idp-plugin-privacyIDEA-api</artifactId>
@@ -34,7 +34,7 @@
             <groupId>${idp.groupId}</groupId>
             <artifactId>idp-admin-impl</artifactId>
             <scope>provided</scope>
-        </dependency>    
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,7 +50,7 @@
                                 <manifestEntries>
                                     <Implementation-Title>${project.artifactId}</Implementation-Title>
                                     <Implementation-Version>${project.version}</Implementation-Version>
-                                    <Implementation-Vendor>FIXME-VENDOR</Implementation-Vendor>
+                                    <Implementation-Vendor>privacyIDEA</Implementation-Vendor>
                                 </manifestEntries>
                             </manifestSection>
                         </manifestSections>
