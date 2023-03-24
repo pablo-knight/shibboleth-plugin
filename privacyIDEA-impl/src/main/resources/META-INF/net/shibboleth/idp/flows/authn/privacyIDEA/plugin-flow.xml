@@ -1,9 +1,8 @@
 <flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd"
-	parent="authn.abstract, authn/conditions">
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd"
+      parent="authn.abstract, authn/conditions">
 
-	<!-- This is a login flow for multi-factor authentication against the privacyIDEA -->
-
+    <!-- This is a login flow for multi-factor authentication against the privacyIDEA -->
 
 
 </flow>
