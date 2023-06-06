@@ -15,12 +15,14 @@ public class PrivacyIDEAAuthenticator extends PropertyDrivenIdPPlugin
     /**
      * Constructor.
      *
-     * @param PrivacyIDEAPlugin type of plugin
+     * @param PrivacyIDEAAuthenticator type of plugin
      * @throws IOException      if properties can't be loaded
      * @throws PluginException  if another error occurs
      */
     public PrivacyIDEAAuthenticator(@Nonnull final Class<? extends IdPPlugin> PrivacyIDEAAuthenticator) throws IOException, PluginException
     {
-        super(PrivacyIDEAAuthenticator);
+        super(PrivacyIDEAAuthenticator.class);
     }
+
+    //todo
 }

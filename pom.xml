@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>net.shibboleth</groupId>
         <artifactId>parent</artifactId>
-        <version>11.2.0</version>
+        <version>11.3.5</version>
     </parent>
+
+    <name>Shibboleth IdP :: Plugins :: privacyIDEA</name>
+    <description>An IdP plugin providing MFA support.</description>
     <groupId>org.privacyidea</groupId>
     <artifactId>java-idp-plugin-privacyidea-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Shibboleth IdP :: Plugins :: privacyIDEA</name>
     <packaging>pom</packaging>
-    <description>privacyIDEA MFA plugin for the Shibboleth IdP.</description>
+
     <organization>
         <name>NetKnights GmbH</name>
         <url>https://netknights.it</url>
     </organization>
+
     <developers>
         <developer>
             <name>Lukas Matusiewicz</name>
@@ -24,6 +29,7 @@
             <organization>NetKnights GmbH</organization>
         </developer>
     </developers>
+
     <properties>
         <idp.groupId>net.shibboleth.idp</idp.groupId>
         <idp.version>4.1.0</idp.version>
@@ -31,12 +37,20 @@
         <opensaml.version>4.1.0</opensaml.version>
         <checkstyle.configLocation>${project.basedir}/checkstyle.xml</checkstyle.configLocation>
     </properties>
+
     <distributionManagement>
         <site>
             <id>site</id>
             <url>dav:...</url>
         </site>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:...</connection>
+        <developerConnection>scm:git:...</developerConnection>
+        <url>...</url>
+    </scm>
+
     <repositories>
         <repository>
             <id>shib-release</id>
@@ -53,16 +67,13 @@
             </releases>
         </repository>
     </repositories>
-    <scm>
-        <connection>scm:git:...</connection>
-        <developerConnection>scm:git:...</developerConnection>
-        <url>...</url>
-    </scm>
+
     <dependencies>
         <!-- Project wide test Dependencies -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
+            <version>7.7.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -75,6 +86,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <dependencyManagement>
         <!-- privacyIDEA project dependencies -->
         <dependencies>
@@ -113,6 +125,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -131,6 +144,7 @@
             </plugin>
         </plugins>
     </build>
+
     <modules>
         <module>privacyIDEA-impl</module>
         <module>privacyIDEA-api</module>
