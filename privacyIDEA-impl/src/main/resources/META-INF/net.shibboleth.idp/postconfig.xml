@@ -6,7 +6,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
-
        default-init-method="initialize" default-destroy-method="destroy">
 
     <!-- 
@@ -30,9 +29,9 @@
         <property name="supportedPrincipals">
             <list>
                 <bean parent="shibboleth.SAML2AuthnContextClassRef"
-                      c:classRef="class-ref"/>
+                      c:classRef="urn:oasis:names:tc:SAML:2.0:ac:classes:TimeSyncToken"/>
                 <bean parent="shibboleth.SAML1AuthenticationMethod"
-                      c:method="auth-ref"/>
+                      c:method="urn:oasis:names:tc:SAML:1.0:am:HardwareToken"/>
             </list>
         </property>
         <property name="supportedPrincipalsByString">
