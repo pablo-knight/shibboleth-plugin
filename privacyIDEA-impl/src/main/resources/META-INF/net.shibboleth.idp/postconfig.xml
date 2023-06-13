@@ -8,12 +8,7 @@
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
        default-init-method="initialize" default-destroy-method="destroy">
 
-    <!-- 
-    System beans needed for extension to function, loaded after global.xml.
-    The default template shows an incomplete example authentication flow descriptor which can be
-    removed if not needed 
-    -->
-
+    <!-- System beans needed for extension to function, loaded after global.xml -->
     <bean id="authn/privacyIDEA" parent="shibboleth.AuthenticationFlow"
           p:order="%{idp.authn.privacyIDEA.order:1000}"
           p:nonBrowserSupported="%{idp.authn.privacyIDEA.nonBrowserSupported:true}"
@@ -29,9 +24,7 @@
         <property name="supportedPrincipals">
             <list>
                 <bean parent="shibboleth.SAML2AuthnContextClassRef"
-                      c:classRef="urn:oasis:names:tc:SAML:2.0:ac:classes:TimeSyncToken"/>
-                <bean parent="shibboleth.SAML1AuthenticationMethod"
-                      c:method="urn:oasis:names:tc:SAML:1.0:am:HardwareToken"/>
+                      c:classRef="urn:de:zedat:fudis:SAML:2.0:ac:classes:CR"/>
             </list>
         </property>
         <property name="supportedPrincipalsByString">
@@ -39,4 +32,22 @@
                   c:_0="#{'%{idp.authn.privacyIDEA.supportedPrincipals:}'.trim()}"/>
         </property>
     </bean>
+
+    <bean id="privacyIdeaConfigurationBean" abstract="true"
+          class="org.privacyidea.PrivacyIDEAFactoryBean"
+          p:authorizationToken="%{fudiscr.privacyidea.authorization_token:#{null}}"
+          p:serverURL="%{fudiscr.privacyidea.base_uri:#{'https://localhost'}}"
+          p:serviceUsername="%{fudiscr.privacyidea.service_username:#{null}}"
+          p:serviceRealm="%{fudiscr.privacyidea.service_realm:#{null}}"
+          p:servicePassword="%{fudiscr.privacyidea.service_password:#{null}}"
+          p:defaultRealm="%{fudiscr.privacyidea.default_realm:#{null}}"
+          p:checkConnectionCertificate="%{fudiscr.privacyidea.check_connection_certificate:true}"
+          p:singleTriggerChallenges="%{fudiscr.privacyidea.single_trigger_challenges:true}"
+          p:preferredParameterName="%{fudiscr.privacyidea.preferred_parameter_name:fudis_preferred}"
+          p:relyingPartyIdParameterName="%{fudiscr.privacyidea.relying_party_id_parameter_name:#{null}}"
+          p:userAgentIPAddressParameterName="%{fudiscr.privacyidea.user_agent_ip_address_parameter_name:#{null}}"
+          p:singleton="%{fudiscr.privacyidea.singleton:true}"/>
+
+    <bean id="PrivacyIdeaChallengeResponseClient" parent="PrivacyIdeaChallengeResponseClientFactoryBean"
+          lazy-init="true"/>
 </beans>
