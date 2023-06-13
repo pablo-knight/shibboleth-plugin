@@ -17,4 +17,9 @@
 
     <bean class="net.shibboleth.ext.spring.config.IdentifiableBeanPostProcessor"/>
     <bean class="net.shibboleth.idp.profile.impl.ProfileActionBeanPostProcessor"/>
+
+    <bean id="privacyIDEA"
+          class="org.privacyidea.PrivacyIDEA" scope="prototype"
+
+    />
 </beans>

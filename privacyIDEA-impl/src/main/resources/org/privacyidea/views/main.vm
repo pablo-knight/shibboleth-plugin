@@ -43,6 +43,7 @@
     <title>#springMessageText("$titleMessageTextProperty", "Token Login Service")</title>
     <link rel="stylesheet" type="text/css" href="$request.getContextPath()#springMessageText("idp.css", "/css/placeholder.css")">
 </head>
+
 <body>
 <div class="wrapper">
     <div class="container">

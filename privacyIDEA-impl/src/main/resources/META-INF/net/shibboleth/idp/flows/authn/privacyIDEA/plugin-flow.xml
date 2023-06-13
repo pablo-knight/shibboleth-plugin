@@ -3,6 +3,9 @@
       parent="authn.abstract, authn/conditions">
 
     <!-- This is a login flow for multi-factor authentication against the privacyIDEA -->
+    <view-state id="privacyIDEAForm" view="test.vm">
+        <transition on="submit" to="proceed" />
+    </view-state>
 
-
+    <bean-import resource="plugin-beans.xml" />
 </flow>
