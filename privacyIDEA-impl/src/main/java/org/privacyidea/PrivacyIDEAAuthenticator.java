@@ -23,6 +23,4 @@ public class PrivacyIDEAAuthenticator extends PropertyDrivenIdPPlugin
     {
         super(PrivacyIDEAAuthenticator.class);
     }
-
-    //todo
 }

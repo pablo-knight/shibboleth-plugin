@@ -19,6 +19,4 @@ public class PrivacyIDEAModule extends PluginIdPModule{
     public PrivacyIDEAModule() throws IOException, ModuleException {
         super(PrivacyIDEAModule.class);
     }
-    
-    //todo
 }
