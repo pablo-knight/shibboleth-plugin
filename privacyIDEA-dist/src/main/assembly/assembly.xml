@@ -12,7 +12,7 @@
     <fileSets>
         <!-- The plugin property file -->
         <fileSet>
-            <directory>../plugin-impl/target/classes/FIXME</directory>
+            <directory>../privacyIDEA-impl/target/classes/org/privacyidea</directory>
             <outputDirectory>bootstrap</outputDirectory>
             <includes>
                 <include>plugin.properties</include>
@@ -21,10 +21,10 @@
 
         <!--  The implementation jar -->
         <fileSet>
-            <directory>../plugin-impl/target</directory>
+            <directory>../privacyIDEA-impl/target</directory>
             <outputDirectory>webapp/WEB-INF/lib</outputDirectory>
             <includes>
-                <include>plugin-impl-*.jar</include>
+                <include>privacyIDEA-impl-*.jar</include>
             </includes>
             <excludes>
                 <exclude>*test*.jar</exclude>
@@ -35,10 +35,10 @@
 
         <!--  The API jar -->
         <fileSet>
-            <directory>../plugin-api/target</directory>
+            <directory>../privacyIDEA-api/target</directory>
             <outputDirectory>webapp/WEB-INF/lib</outputDirectory>
             <includes>
-                <include>plugin-api-*.jar</include>
+                <include>privacyIDEA-api-*.jar</include>
             </includes>
             <excludes>
                 <exclude>*test*.jar</exclude>
@@ -49,7 +49,7 @@
 
         <!--  The dependencies -->
         <fileSet>
-            <directory>../plugin-impl/target/dependency</directory>
+            <directory>../privacyIDEA-impl/target/dependency</directory>
             <outputDirectory>webapp/WEB-INF/lib</outputDirectory>
             <includes>
                 <include>*.jar</include>
